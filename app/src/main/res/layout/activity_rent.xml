@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_rent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="50dp"
+    android:paddingTop="50dp"
+    tools:context="RentActivity">
+
+    <LinearLayout
+        android:id="@+id/texts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="대여소" />
+
+        <EditText
+            android:id="@+id/textViewLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="우산" />
+
+        <EditText
+            android:id="@+id/textViewUmbrella"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="사용자 이름" />
+
+        <EditText
+            android:id="@+id/textViewName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_qrScan"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/texts"
+        android:layout_centerInParent="true"
+        android:text="SCAN QR CODE" />
+
+    <Button
+        android:id="@+id/btn_rent"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_qrScan"
+        android:layout_centerInParent="true"
+        android:text="대여시작"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="77dp"
+        android:layout_height="71dp"
+        android:layout_toLeftOf="@id/rentHead"
+        android:layout_above="@id/texts"
+        android:src="@drawable/ic_umbrella" />
+
+    <ImageView
+        android:id="@+id/rentHead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_above="@id/texts"
+        android:src="@drawable/rent_text" />
+
+
+</RelativeLayout>
