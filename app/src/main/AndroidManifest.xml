@@ -19,7 +19,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UMB">
-        <activity android:name=".CardinfoActivity"></activity>
+        <activity android:name=".GoogleMypage"></activity>
+        <activity android:name=".CardinfoActivity" />
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="fullSensor"

@@ -58,7 +58,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="45dp"
         android:layout_marginTop="205dp"
-        android:text="email: qwer@naver.com"
+        android:text="email"
         android:textSize="20sp" />
 
     <TextView
