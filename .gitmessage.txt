@@ -1,0 +1,16 @@
+# <type>: <subject>
+# 제목은 50자 이내 / 변경사항이 무엇인지 정확히 작성
+
+# Body Message
+# 본문의 구체적인 내용 작성
+
+# Issue Tracker Number or URL
+
+# --- COMMIT END ---
+# Type can be
+#   feat    : 새로운 기능
+#   fix     : 버그 수정
+#   refactor: 코드 리팩토링
+#   style   : 코드 의미에 영향을 주지 않는 변경사항 (형식지정, 세미콜론 누락 등)
+#   docs    : 문서의 추가, 수정, 삭제
+#   test    : 테스트 추가, 수정 삭제
