@@ -1,5 +1,3 @@
-
-
 package good.ss.um;
 
 import android.content.Intent;
@@ -56,8 +54,6 @@ public class RentActivity extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
         readUser();
-        //btn_rent 버튼 클릭시 RentselectActivity로 전환
-
 
         //저장하기 버튼
         //스캔한 다음에 텍스트뷰에서 데이터 가져와서 저장실행
@@ -80,7 +76,7 @@ public class RentActivity extends AppCompatActivity {
                 writeNewUser(a,getuserLocation,getUserUmbrella,getUserName);
 
 
-                Intent intent = new Intent(getApplicationContext(), RentselectActivity.class);
+                Intent intent = new Intent(getApplicationContext(), DepositActivity.class);
                 startActivity(intent);
 
 

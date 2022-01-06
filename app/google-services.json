@@ -1,63 +1,47 @@
 {
   "project_info": {
-    "project_number": "291146400353",
-    "firebase_url": "https://qrscanner-a0963-default-rtdb.firebaseio.com",
-    "project_id": "qrscanner-a0963",
-    "storage_bucket": "qrscanner-a0963.appspot.com"
+    "project_number": "1074969628472",
+    "firebase_url": "https://login-page-13fd7-default-rtdb.firebaseio.com",
+    "project_id": "login-page-13fd7",
+    "storage_bucket": "login-page-13fd7.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:291146400353:android:bcdb2df6e509cc5e596020",
+        "mobilesdk_app_id": "1:1074969628472:android:c75632c9b0897f0ce0bbcd",
         "android_client_info": {
           "package_name": "good.ss.um"
         }
       },
       "oauth_client": [
         {
-          "client_id": "291146400353-7p0ev1lph1ck176chsk56ftqolm88gai.apps.googleusercontent.com",
+          "client_id": "1074969628472-qlt64kgbl1ftvjpd1l09po8vdni4jer0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "good.ss.um",
+            "certificate_hash": "38a8439631e710fa4014d68fa247aa25d8a3bb85"
+          }
+        },
+        {
+          "client_id": "1074969628472-i0fmv1t0mptrdm4kmsak57h1ngdcvk7n.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDcH5V86QmFyaD4xLEWdmvydkzuAH_Yle4"
+          "current_key": "AIzaSyBwjL0yrl0JOhr9_vLbKRTRQo-nwoO93z4"
+        }
+      ],
+      "google_maps_key": [
+        {
+          "current_key": "AIzaSyACApSz2KUgy_ZcS2hf81RL_dFvdqKO3zM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "291146400353-7p0ev1lph1ck176chsk56ftqolm88gai.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:291146400353:android:6863e22d8c4e2100596020",
-        "android_client_info": {
-          "package_name": "good.ss.um2"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "291146400353-7p0ev1lph1ck176chsk56ftqolm88gai.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDcH5V86QmFyaD4xLEWdmvydkzuAH_Yle4"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "291146400353-7p0ev1lph1ck176chsk56ftqolm88gai.apps.googleusercontent.com",
+              "client_id": "1074969628472-35m0kdmarrb570c6uvb3siq4atcn251t.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
