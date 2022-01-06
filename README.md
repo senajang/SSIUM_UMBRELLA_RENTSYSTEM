@@ -19,3 +19,6 @@
 ## Features
 안드로이드 폰 뿐만 아니라 IOS에서도 지원
 충북대뿐만 아니라 다양한 지역에서 서비스 상용화
+
+## LICENSE
+Apache License [NOTICE](https://github.com/senajang/SSIUM_UMBRELLA_RENTSYSTEM/blob/master/LICENSE)
