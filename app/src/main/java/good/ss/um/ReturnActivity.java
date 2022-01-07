@@ -28,9 +28,7 @@ public class ReturnActivity extends AppCompatActivity {
     private Button btn_return;
     private DatabaseReference userUmDb;
     private DatabaseReference returnUmDb;
-    //private String usingtime="00시00분13초";
-
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
