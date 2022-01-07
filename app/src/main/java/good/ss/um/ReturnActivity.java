@@ -67,9 +67,6 @@ public class ReturnActivity extends AppCompatActivity {
                         textViewUmbrella.setText(umbrella);
                         textViewName.setText(name);
 
-
-
-
                     }
 
                     @Override
@@ -109,7 +106,7 @@ public class ReturnActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(Void aVoid) {
                         // Write was successful!
-                        Toast.makeText(ReturnActivity.this, "반납이 완료되었습니다.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReturnActivity.this, "반납 신청이 완료되었습니다. 우산의 상태 확인 후 보증금이 반환됩니다.", Toast.LENGTH_SHORT).show();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
