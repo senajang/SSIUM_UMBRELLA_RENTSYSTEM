@@ -4,10 +4,10 @@
     android:id="@+id/activity_return"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="10dp"
     android:paddingLeft="10dp"
-    android:paddingRight="50dp"
     android:paddingTop="50dp"
+    android:paddingRight="50dp"
+    android:paddingBottom="10dp"
     tools:context="ReturnActivity">
 
     <LinearLayout
@@ -90,16 +90,16 @@
         android:id="@+id/imageView3"
         android:layout_width="77dp"
         android:layout_height="71dp"
-        android:layout_toLeftOf="@id/rentHead"
         android:layout_above="@id/texts"
+        android:layout_toLeftOf="@id/rentHead"
         android:src="@drawable/ic_umbrella" />
 
     <ImageView
         android:id="@+id/rentHead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:layout_above="@id/texts"
+        android:layout_centerInParent="true"
         android:src="@drawable/rent_text" />
 
 </RelativeLayout>

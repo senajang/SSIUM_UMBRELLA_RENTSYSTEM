@@ -16,12 +16,12 @@ public class CityFinder extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city_finder);
-        final EditText editText=(findViewById(R.id.searchCity));
-        ImageView backButton=findViewById(R.id.backButton);
+        final EditText editText = (findViewById(R.id.searchCity));
+        ImageView backButton = findViewById(R.id.backButton);
 
-        backButton.setOnClickListener(new View.OnClickListener(){
+        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 finish();
             }
         });

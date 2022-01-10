@@ -33,8 +33,7 @@
         app:uiTiltGestures="true"
         app:uiZoomControls="true"
         app:uiZoomGestures="true"
-        tools:context=".MapsActivity"
-        />
+        tools:context=".MapsActivity" />
 
     <Button
         android:id="@+id/btn_startRent"

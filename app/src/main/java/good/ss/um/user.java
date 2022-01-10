@@ -69,6 +69,7 @@ public class user {
     public String getUserName() {
         return userName;
     }
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -77,6 +78,7 @@ public class user {
     public String getUserLocation() {
         return userLocation;
     }
+
     public void setUserLocation(String userLocation) {
         this.userLocation = userLocation;
     }
@@ -85,6 +87,7 @@ public class user {
     public String getUserUmbrella() {
         return userUmbrella;
     }
+
     public void setUserUmbrella(String userUmbrella) {
         this.userUmbrella = userUmbrella;
     }

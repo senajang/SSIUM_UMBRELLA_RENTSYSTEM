@@ -23,7 +23,7 @@ public class StartLogo extends AppCompatActivity {
                 finish();
 
             }
-        },2000);
+        }, 2000);
 
     }
 }

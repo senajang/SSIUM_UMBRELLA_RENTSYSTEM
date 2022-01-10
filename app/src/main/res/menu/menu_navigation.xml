@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home"
-        android:title="Home"
-        android:icon="@drawable/ic_baseline_home_24"/>
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home" />
 
     <item
         android:id="@+id/weather"
-        android:title="Weather"
-        android:icon="@drawable/ic_baseline_cloud_24"/>
+        android:icon="@drawable/ic_baseline_cloud_24"
+        android:title="Weather" />
 
     <item
         android:id="@+id/mypage"
-        android:title="My Page"
-        android:icon="@drawable/ic_baseline_person_24"/>
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="My Page" />
 
 
 </menu>

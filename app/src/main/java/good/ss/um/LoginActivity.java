@@ -140,10 +140,11 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    private void updateUI(GoogleSignInAccount acct){
-        Intent intent=new Intent(getApplicationContext(), MypageActivity.class);
+    private void updateUI(GoogleSignInAccount acct) {
+        Intent intent = new Intent(getApplicationContext(), MypageActivity.class);
         intent.putExtra(MypageActivity.GOOGLE_ACCOUNT, acct);
-        startActivity(intent);;
+        startActivity(intent);
+        ;
     }
 
     public void onClick(View v) {

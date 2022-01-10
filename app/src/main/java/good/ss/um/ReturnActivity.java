@@ -43,8 +43,8 @@ public class ReturnActivity extends AppCompatActivity {
 
         textViewLocation = (TextView) findViewById(R.id.textViewLocation_return);
         textViewUmbrella = (TextView) findViewById(R.id.textViewUmbrella_return);
-        textViewName = (TextView)  findViewById(R.id.textViewName_return);
-        textViewUsingTime = (TextView)  findViewById(R.id.textViewName_usingtime);
+        textViewName = (TextView) findViewById(R.id.textViewName_return);
+        textViewUsingTime = (TextView) findViewById(R.id.textViewName_usingtime);
 
         //대여 정보 확인 버튼
         btn_info.setOnClickListener(new View.OnClickListener() {
@@ -53,9 +53,9 @@ public class ReturnActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 long endTime = System.currentTimeMillis();
-                long usingTime=(endTime-GlobalVar.getGlobalValue())/1000;
-                textViewUsingTime.setText(usingTime/86400+"일 "+usingTime%86400/3600+"시 "+usingTime%3600/60+"분 "+usingTime%3600%60+"초" );
-                userUmDb= FirebaseDatabase.getInstance().getReference().child("users").child("1");
+                long usingTime = (endTime - GlobalVar.getGlobalValue()) / 1000;
+                textViewUsingTime.setText(usingTime / 86400 + "일 " + usingTime % 86400 / 3600 + "시 " + usingTime % 3600 / 60 + "분 " + usingTime % 3600 % 60 + "초");
+                userUmDb = FirebaseDatabase.getInstance().getReference().child("users").child("1");
                 userUmDb.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -89,10 +89,10 @@ public class ReturnActivity extends AppCompatActivity {
                 HashMap result = new HashMap<>();
                 result.put("위치", getuserLocation);
                 result.put("우산", getUserUmbrella);
-                result.put("이름",getUserName);
+                result.put("이름", getUserName);
 
-                a = a+1;
-                returnUmbrella(a,getuserLocation,getUserUmbrella,getUserName);
+                a = a + 1;
+                returnUmbrella(a, getuserLocation, getUserUmbrella, getUserName);
             }
         });
 
@@ -100,7 +100,7 @@ public class ReturnActivity extends AppCompatActivity {
 
     private void returnUmbrella(int userId, String userName, String userUmbrella, String userLocation) {
         user user = new user(userName, userUmbrella, userLocation);
-        returnUmDb= FirebaseDatabase.getInstance().getReference();
+        returnUmDb = FirebaseDatabase.getInstance().getReference();
         returnUmDb.child("ReturnList").child(String.valueOf(userId)).setValue(user)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override

@@ -28,6 +28,7 @@ public class DepositActivity extends AppCompatActivity {
 
     Button button;
     private int stuck = 10;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,9 +39,9 @@ public class DepositActivity extends AppCompatActivity {
         button = findViewById(R.id.Payment);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {BootUser bootUser = new BootUser().setPhone("010-5918-2579"); // !! 자신의 핸드폰 번호로 바꾸기
-                BootExtra bootExtra = new BootExtra().setQuotas(new int[] {0, 2, 3});
+            public void onClick(View v) {
+                BootUser bootUser = new BootUser().setPhone("010-5918-2579"); // !! 자신의 핸드폰 번호로 바꾸기
+                BootExtra bootExtra = new BootExtra().setQuotas(new int[]{0, 2, 3});
 
                 Bootpay.init(getFragmentManager())
                         .setApplicationId("61d52020e38c30001f7b77f4") // 해당 프로젝트(안드로이드)의 application id 값(위의 값 복붙)

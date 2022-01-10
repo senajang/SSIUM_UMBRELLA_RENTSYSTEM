@@ -21,20 +21,19 @@
     </ImageView>
 
     <EditText
+        android:id="@+id/searchCity"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:hint="Enter City Name"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:textSize="20sp"
         android:background="@drawable/edittextdesign"
-        android:textColor="@color/black"
-        android:imeOptions="actionGo"
-        android:id="@+id/searchCity"
         android:gravity="center_vertical|center_horizontal"
-        >
+        android:hint="Enter City Name"
+        android:imeOptions="actionGo"
+        android:textColor="@color/black"
+        android:textSize="20sp">
 
     </EditText>
 

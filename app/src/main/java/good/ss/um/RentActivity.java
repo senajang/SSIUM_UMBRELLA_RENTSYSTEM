@@ -29,7 +29,7 @@ import java.util.HashMap;
 
 public class RentActivity extends AppCompatActivity {
     //view Objects
-    private Button btn_qrScan,btn_save, btn_rent;
+    private Button btn_qrScan, btn_save, btn_rent;
     private TextView textViewLocation, textViewUmbrella, textViewName;
     int a = 0;
     long startTime;
@@ -70,10 +70,10 @@ public class RentActivity extends AppCompatActivity {
                 HashMap result = new HashMap<>();
                 result.put("위치", getuserLocation);
                 result.put("우산", getUserUmbrella);
-                result.put("이름",getUserName);
+                result.put("이름", getUserName);
 
-                a = a+1;
-                writeNewUser(a,getuserLocation,getUserUmbrella,getUserName);
+                a = a + 1;
+                writeNewUser(a, getuserLocation, getUserUmbrella, getUserName);
 
 
                 Intent intent = new Intent(getApplicationContext(), DepositActivity.class);
@@ -87,7 +87,7 @@ public class RentActivity extends AppCompatActivity {
         btn_qrScan = (Button) findViewById(R.id.btn_qrScan);
         textViewLocation = (TextView) findViewById(R.id.textViewLocation);
         textViewUmbrella = (TextView) findViewById(R.id.textViewUmbrella);
-        textViewName = (TextView)  findViewById(R.id.textViewName);
+        textViewName = (TextView) findViewById(R.id.textViewName);
 
         //intializing scan object
         qrScan = new IntentIntegrator(this);
@@ -106,7 +106,7 @@ public class RentActivity extends AppCompatActivity {
 
     //Getting the scan results
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if (result != null) {
             //qrcode 가 없으면
@@ -155,12 +155,12 @@ public class RentActivity extends AppCompatActivity {
 
     }
 
-    private void readUser(){
+    private void readUser() {
         mDatabase.child("users").child("1").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 // Get Post object and use the values to update the UI
-                if(dataSnapshot.getValue(user.class) != null){
+                if (dataSnapshot.getValue(user.class) != null) {
                     user post = dataSnapshot.getValue(user.class);
                     Log.w("FireBaseData", "getData" + post.toString());
                 } else {
@@ -175,12 +175,6 @@ public class RentActivity extends AppCompatActivity {
             }
         });
     }
-
-
-
-
-
-
 
 
 }

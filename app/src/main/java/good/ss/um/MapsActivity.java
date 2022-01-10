@@ -71,19 +71,19 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
 
         //지도에 마커띄우기
-        LatLng cbnu_s4_1 = new LatLng(36.625698,127.454405);
+        LatLng cbnu_s4_1 = new LatLng(36.625698, 127.454405);
         googleMap.addMarker(new MarkerOptions()
                 .position(cbnu_s4_1)
                 .title("충북대 s4-1 대여소")
                 .snippet("우산 2개 보유"));
 
-        LatLng cbnu_library = new LatLng(36.628404,127.457398);
+        LatLng cbnu_library = new LatLng(36.628404, 127.457398);
         googleMap.addMarker(new MarkerOptions()
                 .position(cbnu_library)
                 .title("충북대 중앙도서관 대여소")
                 .snippet("우산 0개 보유"));
 
-        LatLng cbnu_coresidence = new LatLng(36.631461,127.457711);
+        LatLng cbnu_coresidence = new LatLng(36.631461, 127.457711);
         googleMap.addMarker(new MarkerOptions()
                 .position(cbnu_coresidence)
                 .title("충북대 본관 기숙사 대여소")
@@ -99,7 +99,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         getLocationPermission();
         //bottomnavigationbar
-        BottomNavigationView bottomNavigationView =findViewById(R.id.bottom_navigation);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         //set home selected
         bottomNavigationView.setSelectedItemId((R.id.home));
 
@@ -107,23 +107,23 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch(item.getItemId()){
+                switch (item.getItemId()) {
                     case R.id.weather:
                         startActivity(new Intent(getApplicationContext()
                                 , WeatherActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext()
-                                ,MapsActivity.class));
-                        overridePendingTransition(0,0);
+                                , MapsActivity.class));
+                        overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.mypage:
                         startActivity(new Intent(getApplicationContext()
                                 , MypageActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         return true;
                 }
                 return false;
@@ -133,7 +133,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         btn_startRent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MapsActivity.this, RentActivity.class );
+                Intent intent = new Intent(MapsActivity.this, RentActivity.class);
                 startActivity(intent); //렌트 엑티비티로 이동
 
             }
@@ -143,7 +143,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         btn_startReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MapsActivity.this, ReturnActivity.class );
+                Intent intent = new Intent(MapsActivity.this, ReturnActivity.class);
                 startActivity(intent); //렌트 엑티비티로 이동
             }
         });
@@ -166,19 +166,19 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         // mFirebaseAuth.getCurrentUser().delete();
     }
 
-    private void getDeviceLocation(){
+    private void getDeviceLocation() {
         Log.d(TAG, "getDeviceLocation: getting the devices current location");
 
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
-        try{
-            if(mLocationPermissionsGranted){
+        try {
+            if (mLocationPermissionsGranted) {
 
                 final Task location = mFusedLocationProviderClient.getLastLocation();
                 location.addOnCompleteListener(new OnCompleteListener() {
                     @Override
                     public void onComplete(@NonNull Task task) {
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             Log.d(TAG, "onComplete: found location!");
                             Location currentLocation = (Location) task.getResult();
 
@@ -187,48 +187,48 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                             moveCamera(new LatLng(36.627227384740216, 127.45853455040243),
                                     DEFAULT_ZOOM);
 
-                        }else{
+                        } else {
                             Log.d(TAG, "onComplete: current location is null");
                             Toast.makeText(MapsActivity.this, "unable to get current location", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
             }
-        }catch (SecurityException e){
-            Log.e(TAG, "getDeviceLocation: SecurityException: " + e.getMessage() );
+        } catch (SecurityException e) {
+            Log.e(TAG, "getDeviceLocation: SecurityException: " + e.getMessage());
         }
     }
 
-    private void moveCamera(LatLng latLng, float zoom){
-        Log.d(TAG, "moveCamera: moving the camera to: lat: " + latLng.latitude + ", lng: " + latLng.longitude );
+    private void moveCamera(LatLng latLng, float zoom) {
+        Log.d(TAG, "moveCamera: moving the camera to: lat: " + latLng.latitude + ", lng: " + latLng.longitude);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom));
     }
 
 
-    private void initMap(){
+    private void initMap() {
         Log.d(TAG, "initMap: initializing map");
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
 
         mapFragment.getMapAsync(MapsActivity.this);
     }
 
-    private void getLocationPermission(){
+    private void getLocationPermission() {
         Log.d(TAG, "getLocationPermission: getting location permissions");
         String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION,
                 Manifest.permission.ACCESS_COARSE_LOCATION};
 
-        if(ContextCompat.checkSelfPermission(this.getApplicationContext(),
-                FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
-            if(ContextCompat.checkSelfPermission(this.getApplicationContext(),
-                    COURSE_LOCATION) == PackageManager.PERMISSION_GRANTED){
+        if (ContextCompat.checkSelfPermission(this.getApplicationContext(),
+                FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            if (ContextCompat.checkSelfPermission(this.getApplicationContext(),
+                    COURSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                 mLocationPermissionsGranted = true;
                 initMap();
-            }else{
+            } else {
                 ActivityCompat.requestPermissions(this,
                         permissions,
                         LOCATION_PERMISSION_REQUEST_CODE);
             }
-        }else{
+        } else {
             ActivityCompat.requestPermissions(this,
                     permissions,
                     LOCATION_PERMISSION_REQUEST_CODE);

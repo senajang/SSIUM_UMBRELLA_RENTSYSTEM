@@ -30,7 +30,7 @@ public class MypageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mypage);
 
-        try{
+        try {
             GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                     .requestEmail()
                     .build();
@@ -39,25 +39,24 @@ public class MypageActivity extends AppCompatActivity {
             profileEmail = findViewById(R.id.myemail);
             mGoogleSignInAccount = getIntent().getParcelableExtra(GOOGLE_ACCOUNT);
             profileEmail.setText(mGoogleSignInAccount.getEmail());
-        }catch(NullPointerException e){
+        } catch (NullPointerException e) {
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-            if (user!=null) {
+            if (user != null) {
                 String Email;
                 Email = user.getEmail();
                 profileEmail.setText(user.getEmail());
-            }
-            else {
+            } else {
                 //No user is signed in
             }
         }
 
-        textviewUsingTime = (TextView)  findViewById(R.id.myrenttimeis);
+        textviewUsingTime = (TextView) findViewById(R.id.myrenttimeis);
         RentTimeVar GlobalVar = (RentTimeVar) getApplication();
         long endTime = System.currentTimeMillis();
-        long usingTime=(endTime-GlobalVar.getGlobalValue())/1000;
-        textviewUsingTime.setText(usingTime/86400+"days "+usingTime%86400/3600+"h "+usingTime%3600/60+"m "+usingTime%3600%60+"s");
+        long usingTime = (endTime - GlobalVar.getGlobalValue()) / 1000;
+        textviewUsingTime.setText(usingTime / 86400 + "days " + usingTime % 86400 / 3600 + "h " + usingTime % 3600 / 60 + "m " + usingTime % 3600 % 60 + "s");
 
-        BottomNavigationView bottomNavigationView =findViewById(R.id.bottom_navigation);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         //set home selected
         bottomNavigationView.setSelectedItemId((R.id.mypage));
 
@@ -65,17 +64,17 @@ public class MypageActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch(item.getItemId()){
+                switch (item.getItemId()) {
                     case R.id.weather:
                         startActivity(new Intent(getApplicationContext()
                                 , WeatherActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext()
-                                ,MapsActivity.class));
-                        overridePendingTransition(0,0);
+                                , MapsActivity.class));
+                        overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.mypage:

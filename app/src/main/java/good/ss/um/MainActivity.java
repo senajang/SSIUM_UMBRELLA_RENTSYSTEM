@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
-    private static final int ERROR_DIALOG_REQUEST=9001;
+    private static final int ERROR_DIALOG_REQUEST = 9001;
 
     private Button btn_startRent;
     private Button btn_startReturn;
@@ -32,37 +32,37 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Initialize & assign variable
-        BottomNavigationView bottomNavigationView =findViewById(R.id.bottom_navigation);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         //set home selected
 
         bottomNavigationView.setSelectedItemId((R.id.home));
 
-        if(isServicesOK()){
+        if (isServicesOK()) {
             startActivity(new Intent(getApplicationContext()
-                    ,MapsActivity.class));
+                    , MapsActivity.class));
         }
 
         //perform itemselectedlistner
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch(item.getItemId()){
+                switch (item.getItemId()) {
                     case R.id.weather:
                         startActivity(new Intent(getApplicationContext()
                                 , WeatherActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext()
-                                ,MapsActivity.class));
-                        overridePendingTransition(0,0);
+                                , MapsActivity.class));
+                        overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.mypage:
                         startActivity(new Intent(getApplicationContext()
                                 , MypageActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         return true;
                 }
                 return false;
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         btn_startRent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, RentActivity.class );
+                Intent intent = new Intent(MainActivity.this, RentActivity.class);
                 startActivity(intent); //렌트 엑티비티로 이동
 
             }
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         btn_startReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ReturnActivity.class );
+                Intent intent = new Intent(MainActivity.this, ReturnActivity.class);
                 startActivity(intent); //렌트 엑티비티로 이동
             }
         });
@@ -106,22 +106,21 @@ public class MainActivity extends AppCompatActivity {
         // mFirebaseAuth.getCurrentUser().delete();
     }
 
-    public boolean isServicesOK(){
+    public boolean isServicesOK() {
         Log.d(TAG, "isServicesOK: checking google servises version");
-        int available= GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(MainActivity.this);
+        int available = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(MainActivity.this);
 
-        if(available== ConnectionResult.SUCCESS){
+        if (available == ConnectionResult.SUCCESS) {
             //everything is gine and the user can make map requests
             Log.d(TAG, "isServicesOK: Google Play services is working");
             return true;
-        }
-        else if(GoogleApiAvailability.getInstance().isUserResolvableError(available)){
+        } else if (GoogleApiAvailability.getInstance().isUserResolvableError(available)) {
             //an error occured but we can resolve it
-            Log.d(TAG,"isServicesOK: an error occured but we can fix it");
-            Dialog dialog=GoogleApiAvailability.getInstance().getErrorDialog(MainActivity.this,available,ERROR_DIALOG_REQUEST);
+            Log.d(TAG, "isServicesOK: an error occured but we can fix it");
+            Dialog dialog = GoogleApiAvailability.getInstance().getErrorDialog(MainActivity.this, available, ERROR_DIALOG_REQUEST);
             dialog.show();
-        }else{
-            Toast.makeText(this,"You can't make map requests", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "You can't make map requests", Toast.LENGTH_SHORT).show();
         }
         return false;
     }

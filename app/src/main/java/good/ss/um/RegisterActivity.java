@@ -40,8 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         mBtnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 //회원가입 처리 시작
                 String strEmail = mEtEmail.getText().toString(); //문자열로 변환된 입력값을 str에 할당
                 String strPwd = mEtPwd.getText().toString();
@@ -49,9 +48,8 @@ public class RegisterActivity extends AppCompatActivity {
                 //FirebaseAuth 진행
                 mFirebaseAuth.createUserWithEmailAndPassword(strEmail, strPwd).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
-                    public void onComplete(@NonNull Task<AuthResult> task)
-                    {
-                        if (task.isSuccessful()){
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
                             FirebaseUser firebaseUser = mFirebaseAuth.getCurrentUser(); //현재 로그인된 유저를 가져올 수 있다.
                             good.ss.um.UserAccount account = new good.ss.um.UserAccount();
                             account.setIdToken(firebaseUser.getUid());
@@ -61,9 +59,8 @@ public class RegisterActivity extends AppCompatActivity {
                             // setValue : database에 insert(삽입) 행위
                             mDatabaseRef.child("UserAccount").child(firebaseUser.getUid()).setValue(account);
 
-                            Toast.makeText(RegisterActivity.this, "회원가입에 성공하셨습니다.",Toast.LENGTH_SHORT).show();
-                        }
-                        else {
+                            Toast.makeText(RegisterActivity.this, "회원가입에 성공하셨습니다.", Toast.LENGTH_SHORT).show();
+                        } else {
                             Toast.makeText(RegisterActivity.this, "회원가입에 실패하셨습니다.", Toast.LENGTH_SHORT).show();
                         }
                     }

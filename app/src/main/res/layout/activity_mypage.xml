@@ -7,14 +7,14 @@
     tools:context=".MypageActivity">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/bottom_navigation"
+        android:layout_alignParentBottom="true"
         app:itemBackground="@color/cardview_dark_background"
-        app:itemTextColor="@drawable/selector"
         app:itemIconTint="@drawable/selector"
-        app:menu="@menu/menu_navigation"
-        android:layout_alignParentBottom="true"/>
+        app:itemTextColor="@drawable/selector"
+        app:menu="@menu/menu_navigation" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -34,9 +34,9 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="143dp"
         android:layout_marginTop="60dp"
+        android:text="My Page"
         android:textSize="40sp"
-        android:textStyle="bold"
-        android:text="My Page" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/me"
@@ -108,8 +108,6 @@
         android:text="0day 0h 0m"
         android:textSize="30sp"
         android:textStyle="bold" />
-
-
 
 
 </RelativeLayout>
