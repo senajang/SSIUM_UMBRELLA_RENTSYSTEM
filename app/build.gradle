@@ -8,9 +8,9 @@ apply plugin: 'com.google.gms.google-services'
 
 sonarqube {
     properties {
-        property 'sonar.host.url', 'https://sonarcloud.io'
-        property 'sonar.organization', 'sonarsource'
-        property 'sonar.projectKey', 'ssium-sonar-cloud-key'
+        property "sonar.projectKey", "senajang_SSIUM_UMBRELLA_RENTSYSTEM"
+        property "sonar.organization", "ssium-sonar-cloud-key"
+        property "sonar.host.url", "https://sonarcloud.io"
     }
 }
 
