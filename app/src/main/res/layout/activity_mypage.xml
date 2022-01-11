@@ -62,30 +62,6 @@
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/myrent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="250dp"
-        android:text="내 대여권"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="256dp"
-        android:layout_height="109dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginEnd="152dp"
-        android:layout_marginBottom="330dp"
-        app:srcCompat="@drawable/_7d" />
-
-    <TextView
         android:id="@+id/myrenttime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
