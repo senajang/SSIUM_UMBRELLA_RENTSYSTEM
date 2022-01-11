@@ -22,8 +22,8 @@ jobs:
         run: |
           echo ::set-output name=repo_name::$(echo $GITHUB_REPOSITORY| cut -d / -f 2)
           echo ::set-output name=repo_owner::$(echo $GITHUB_REPOSITORY| cut -d / -f 1)
-          
-      - uses: actions/setup-node@v2
+      - name: Set up JDK    
+      - uses: actions/setup-java@v1
         with:
           node-version: 14.18.1
       - name: Install dependencies
