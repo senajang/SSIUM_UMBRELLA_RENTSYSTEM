@@ -17,7 +17,8 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-      - name: Build and analyze
+      - name: SonarCloud Scan
+        if: matrix.java-version == 11 
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
