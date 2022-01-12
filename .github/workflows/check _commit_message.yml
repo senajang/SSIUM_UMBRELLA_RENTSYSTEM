@@ -29,6 +29,7 @@ jobs:
           checkAllCommitMessages: 'true' # optional: this checks all commits associated with a pull request
           accessToken: ${{ secrets.TOKEN }} # github access token is only required if checkAllCommitMessages is true
           error: 'Your first line has to contain a commit type like "Fix".'
+          allowlist: bot*
       # - name: Check for Issue number
       #   uses: gsactions/commit-message-checker@v1
       #   with:
@@ -47,6 +48,7 @@ jobs:
       - uses: actions/github-script@v5.1.0
         with:
           github-token: ${{secrets.TOKEN}}
+          allowlist: bot*
           script: |
             github.issues.createComment({
               issue_number: ${{ env.PR_NUMBER }},
