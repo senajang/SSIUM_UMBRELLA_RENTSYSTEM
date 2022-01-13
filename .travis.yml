@@ -4,10 +4,10 @@ jdk:
   - openjdk11
 
 # 어느 브랜치가 push 될 때 수행할지 지정한다. 
-# 오직 main 브랜치가 push될 때 수행하도록 지정하였다.
+# 오직 master 브랜치가 push될 때 수행하도록 지정하였다.
 branches:
   only:
-    - main
+    - master
 
 # 빌드 전에 gradlew의 권한을 추가한다.
 before_install:
