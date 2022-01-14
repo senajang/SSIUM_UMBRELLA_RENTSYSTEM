@@ -22,10 +22,6 @@ android:
  
 before_install:
   - chmod +x gradlew
-  - yes | sdkmanager "platforms;android-30"
-  - yes | sdkmanager "emulator" "tools" "platform-tools"
-  - yes | sdkmanager --licenses
-  - yes | sdkmanager "build-tools;30.0.2"
 
 before_script:
   - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
