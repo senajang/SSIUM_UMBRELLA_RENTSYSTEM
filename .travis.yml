@@ -1,7 +1,7 @@
 sudo: required
 language: android
 jdk: oraclejdk11
-dist: trusty
+dist: precise
 
 android:
   licenses:
