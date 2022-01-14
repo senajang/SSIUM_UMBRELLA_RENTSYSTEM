@@ -15,7 +15,7 @@ android:
    components:
       - tools
       - platform-tools
-      - tools
+      - sdk_command_line_tools
       - extra-google-google_play_services
       - extra-android-m2repository
    licenses:
