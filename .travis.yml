@@ -1,92 +1,48 @@
-# 언어와 jdk의 버전을 지정한다.
 language: android
-jdk: oraclejdk11
 dist: trusty
+sudo: required
+jdk: oraclejdk11
+
+env:
+   global:
+      - ANDROID_API_LEVEL=30
+      - EMULATOR_API_LEVEL=24
+      - ANDROID_BUILD_TOOLS_VERSION=30.0.2
+      - ANDROID_ABI=armeabi-v7a # x86 requires HAXM and it's not supported by travis (https://github.com/travis-ci/travis-ci/issues/1419)
+      - ADB_INSTALL_TIMEOUT=8 # in minutes (2 minutes by default)
 
 android:
-  components:
-    # 프로젝트의 build tool version 
-    - tools
-    - build-tools-30.0.2
-    - android-30
-    - android-22
-    - extra-google-google_play_services
-    - extra-google-m2repository
-    - extra-android-m2repository
-    - sys-img-armeabi-v7a-android-22
-  
-  licenses:
-    - 'android-sdk-preview-license-.+'
-    - 'android-sdk-license-.+'
-    - 'google-gdk-license-.+'
-    
+   components:
+      - tools
+      - platform-tools
+      - tools
+      - extra-google-google_play_services
+      - extra-android-m2repository
+   licenses:
+      - 'android-sdk-preview-license-.+'
+      - 'android-sdk-license-.+'
+      - 'google-gdk-license-.+'
 
-# 어느 브랜치가 push 될 때 수행할지 지정한다. 
-# 오직 master 브랜치가 push될 때 수행하도록 지정하였다.
-branches:
-  only:
-    - master
-
-# 빌드 전에 gradlew의 권한을 추가한다.
 before_install:
-  - chmod +x gradlew
-  - yes | sdkmanager "platforms;android-30"
+   - chmod +x gradlew
+   - touch $HOME/.android/repositories.cfg
+   - yes | sdkmanager "platforms;android-30"
+   - yes | sdkmanager "build-tools;30.0.2"
+
+
+before_cache:
+   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+cache:
+   directories:
+      - $HOME/.gradle/caches/
+      - $HOME/.gradle/wrapper/
+      - $HOME/.android/build-cache
 
 before_script:
-  - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
-  - emulator -avd test -no-audio -no-window &
-  - android-wait-for-emulator
-  - adb shell input keyevent 82 &
+   - chmod +x gradlew
 
 script:
-  - ./gradlew clean build
-  - ./gradlew test
-  - ./gradlew build check
-
-before_cache:
-  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
-
-cache:
-  directories:
-  - $HOME/.gradle/caches/
-  - $HOME/.gradle/wrapper/
-  before_script:
-  - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
-  - emulator -avd test -no-audio -no-window &
-  - android-wait-for-emulator
-  - adb shell input keyevent 82 &
-
-script:
-  - ./gradlew clean build
-  - ./gradlew test
-  - ./gradlew build check
-
-before_cache:
-  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
-
-cache:
-  directories:
-  - $HOME/.gradle/caches/
-  - $HOME/.gradle/wrapper/
-  before_script:
-  - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
-  - emulator -avd test -no-audio -no-window &
-  - android-wait-for-emulator
-  - adb shell input keyevent 82 &
-
-script:
-  - ./gradlew clean build
-  - ./gradlew test
-  - ./gradlew build check
-
-before_cache:
-  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
-
-cache:
-  directories:
-  - $HOME/.gradle/caches/
-  - $HOME/.gradle/wrapper/
-  - $HOME/.android/build-cache
+   - ./gradlew clean build
+   - ./gradlew test
