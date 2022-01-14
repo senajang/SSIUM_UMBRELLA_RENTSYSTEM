@@ -1,7 +1,7 @@
 language: android
 dist: trusty
 sudo: required
-jdk: oraclejdk11
+jdk: oraclejdk8
 
 env:
    global:
