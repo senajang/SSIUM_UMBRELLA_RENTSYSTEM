@@ -30,7 +30,7 @@ branches:
 # 빌드 전에 gradlew의 권한을 추가한다.
 before_install:
   - chmod +x gradlew
-    - yes | sdkmanager "platforms;android-30"
+  - yes | sdkmanager "platforms;android-30"
 
 before_script:
   - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
