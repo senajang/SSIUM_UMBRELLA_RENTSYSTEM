@@ -3,15 +3,10 @@ on:
   push:
     branches:
       - master
-    paths:
-      - "**.java"
-      - "**.xml" 
   
   pull_request:
     types: [opened, synchronize, reopened]
-    paths:
-      - "**.java"
-      - "**.xml"
+
 jobs:
   build:
     name: Build
