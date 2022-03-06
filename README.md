@@ -16,6 +16,11 @@
 ## 이용 환경
 안드로이드폰에서 이용가능합니다.
 
+## 사용 방법
+![슬라이드1](https://user-images.githubusercontent.com/57481411/156906941-3aae43af-645c-447c-9999-251ed3f1d48d.JPG)
+![슬라이드2](https://user-images.githubusercontent.com/57481411/156906944-6d4d851e-1c99-462e-bc45-a3128555f1cd.JPG)
+![슬라이드3](https://user-images.githubusercontent.com/57481411/156906949-837e2321-ec49-4060-ad86-b3cf0fd963c9.JPG)
+
 ## Features
 안드로이드 폰 뿐만 아니라 IOS에서도 지원
 충북대뿐만 아니라 다양한 지역에서 서비스 상용화
